@@ -1346,7 +1346,7 @@
 				<div class="nameContainer">
 					<input
 						type="text"
-						bind:value={name}
+						bind:value={prenom}
 						placeholder="Entrez votre prénom"
 						id="name"
 						name="name"
