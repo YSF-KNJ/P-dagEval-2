@@ -2,11 +2,6 @@
 	import { page } from '$app/stores';
 	import Header from '../components/Header.svelte';
 
-	// Get the data passed through the URL
-	let userData = {
-		name: $page.url.searchParams.get('name') || '',
-		email: $page.url.searchParams.get('email') || ''
-	};
 </script>
 
 <Header />
@@ -15,7 +10,7 @@
 	<div class="success-card">
 		<h1>Registration Successful! 🎉</h1>
 		<div class="user-info">
-			<h2>Welcome, {userData.name}!</h2>
+			<h2>Welcome!</h2>
 			<p>Your account has been created successfully.</p>
 		</div>
 		<a href="/backoffice/home" class="continue-btn">Continue to Dashboard</a>
