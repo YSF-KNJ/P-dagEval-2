@@ -59,7 +59,6 @@
 			if (response.status === 201) {
 				// Success - redirect to success page
 				console.log('User created successfully! Redirecting to success page...');
-				window.location.href = '/success';
 				
 			} else {
 				// Handle validation errors from Django
