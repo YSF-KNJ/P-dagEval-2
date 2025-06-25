@@ -2,7 +2,7 @@
 </script>
 
 <head>
-	<title>Tamarin</title>
+	<title>PédagEval</title>
 </head>
 
 <slot />
