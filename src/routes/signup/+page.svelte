@@ -13,14 +13,17 @@
 	$: $language;
 
 	//===========> for saving login and info and login in
-
+	let nom = '';
+	let prenom = '';
+	let role = 'Étudiant'; // Default role
+	let name = '';
 	let email = '';
 	let password = '';
 	let errorMessage = '';
 	let posting = false;
 
 	const handleLogin = async () => {
-		window.location.href = '/menu';
+		window.location.href = '/success';
 	};
 </script>
 
@@ -1306,8 +1309,8 @@
 				<div class="nameContainer">
 					<input
 						type="text"
-						bind:value={email}
-						placeholder={$translations.login[4]}
+						bind:value={name}
+						placeholder="Entrez votre prénom"
 						id="name"
 						name="name"
 						required
@@ -1325,9 +1328,52 @@
 
 				<div class="nameContainer">
 					<input
+						type="text"
+						bind:value={nom}
+						placeholder="Entrez votre nom"
+						id="nom"
+						name="nom"
+						required
+						style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
+					/>
+
+					<Icon
+						icon="hugeicons:ai-user"
+						width="32"
+						height="32"
+						style={$language === 'ar'
+							? 'position: absolute; top: 1.5rem; right: 1rem; color: var(--text-color);'
+							: 'position: absolute; top: 1.5rem; left: 1rem; color: var(--text-color)'}
+					/>
+				</div>
+
+				<div class="nameContainer">
+					<select
+						bind:value={role}
+						placeholder="exemple@email.com"
+						id="role"
+						name="role"
+						required
+						style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
+					>
+						<option value="Étudiant">Étudiant</option>
+						<option value="Enseignant">Enseignant</option>
+					</select>
+					<Icon
+						icon="hugeicons:user-group"
+						width="32"
+						height="32"
+						style={$language === 'ar'
+							? 'position: absolute; top: 1.5rem; right: 1rem; color: var(--text-color);'
+							: 'position: absolute; top: 1.5rem; left: 1rem; color: var(--text-color)'}
+					/>
+				</div>
+
+				<div class="nameContainer">
+					<input
 						type="email"
 						bind:value={email}
-						placeholder={$translations.login[0]}
+						placeholder="exemple@email.com"
 						id="name"
 						name="email"
 						required
@@ -1345,10 +1391,10 @@
 				<div class="passContainer">
 					<input
 						bind:value={password}
+						placeholder="••••••••"
 						type="password"
 						id="password2"
 						name="password"
-						placeholder={$translations.login[1]}
 						required
 						style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
 					/>
@@ -1368,12 +1414,12 @@
 							<div class="loader"></div>
 						</div>
 					{:else}
-						{$translations.login[7]}
+						Sign In
 					{/if}
 				</button>
 
 				<p class="error" style="opacity: {errorMessage ? '1' : '0'}">
-					{$translations.login[3]}
+					{errorMessage}
 				</p>
 			</form>
 		</div>
@@ -1554,5 +1600,36 @@
 		&:hover {
 			filter: drop-shadow(0 0 5px var(--main-color));
 		}
+	}
+
+	select {
+		width: 100%;
+		border: 1px solid var(--border-color);
+		border-radius: var(--buttons-radius);
+		padding: 0.75rem;
+		height: 4rem;
+		font-size: var(--p-size);
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+		transition: 0.2s ease;
+		max-width: 24rem;
+		outline-color: var(--main-color);
+		background-color: var(--background-color);
+		color: var(--text-color);
+		margin: 0.5rem 0;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		cursor: pointer;
+	}
+
+	select:focus {
+		border-color: var(--main-color);
+		box-shadow: 0 0 0 2px rgba(var(--main-color-rgb), 0.1);
+	}
+
+	select option {
+		background-color: var(--background-color);
+		color: var(--text-color);
+		padding: 0.5rem;
 	}
 </style>
