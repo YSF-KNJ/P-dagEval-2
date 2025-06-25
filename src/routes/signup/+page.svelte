@@ -56,7 +56,7 @@
 			
 			const data = await response.json();
 			
-			if (response.ok) {
+			if (response.status === 200) {
 				// Success - redirect to success page
 				window.location.href = '/success';
 			} else {
