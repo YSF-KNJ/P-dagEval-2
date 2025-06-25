@@ -1,0 +1,30 @@
+{
+	"header": {
+		"nav": [
+			"Iniciar sesión",
+			"Contacto",
+			"Idiomas",
+			"Cerrar sesión",
+			"Llama al camarero",
+			"Buscar"
+		],
+		"lang": ["Inglés", "Árabe", "Español", "Francés"]
+	},
+	"landing": {
+		"home": [
+			"Tu solución",
+			"de menú digital",
+			"¿Cansado de reimprimir tu menú cada vez que cambias precios? Despídete de los problemas con nuestra aplicación de menú multilingüe.",
+			"prueba gratuita de 24 horas hoy!",
+			"Comenzar",
+			"Ver menú"
+		]
+	},
+	"login": [
+		"Correo electrónico",
+		"Contraseña",
+		"Iniciar sesión",
+		"El correo electrónico o la contraseña no son correctos"
+	],
+	"menu": ["Favorito", "Todos los elementos", "Disponible", "No disponible"]
+}

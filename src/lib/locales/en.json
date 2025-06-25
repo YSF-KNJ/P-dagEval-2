@@ -1,0 +1,27 @@
+{
+	"header": {
+		"nav": ["Login", "Signup", "Languages", "Logout", "Call the waiter", "Search"],
+		"lang": ["English", "Arabic", "Spanish", "French"]
+	},
+	"landing": {
+		"home": [
+			"Make Learning",
+			"Active",
+			"Teachers create quizzes, students join with a code, and results are tracked instantly.",
+			"24-hour free trial today!",
+			"Get started",
+			"Watch tutorial"
+		]
+	},
+	"login": [
+		"Email",
+		"Password",
+		"Login",
+		"Email or Password are not correct",
+		"Name",
+		"Teacher",
+		"Student",
+		"Signup"
+	],
+	"menu": ["Favorite", "All items", "Available", "Not available"]
+}

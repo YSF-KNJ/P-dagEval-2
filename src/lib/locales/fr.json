@@ -1,0 +1,18 @@
+{
+	"header": {
+		"nav": ["Connexion", "Contact", "Langues", "Déconnecter", "Appelez le serveur.", "Rechercher"],
+		"lang": ["Anglais", "Arabe", "Espagnol", "Français"]
+	},
+	"landing": {
+		"home": [
+			"Votre solution,",
+			"menu numérique",
+			"Marre de réimprimer votre menu à chaque changement? Adoptez notre application de menu multilingue.",
+			"essai gratuit de 24 heures!",
+			"Commencer",
+			"Voir le menu"
+		]
+	},
+	"login": ["E-mail", "Mot de passe", "Connexion", "L'e-mail ou le mot de passe est incorrect"],
+	"menu": ["Favori", "Tous les éléments", "Disponible", "Non disponible"]
+}
