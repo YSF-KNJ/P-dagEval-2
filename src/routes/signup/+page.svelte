@@ -5,25 +5,62 @@
 	import { translations } from '$lib/stores/translation';
 	import { language } from '$lib/stores/language';
 	import { onMount, afterUpdate, getContext } from 'svelte';
-	import { auth } from '$lib/firebase';
-	import { signInWithEmailAndPassword } from 'firebase/auth';
 	import { goto } from '$app/navigation';
 
 	$: $translations;
 	$: $language;
 
-	//===========> for saving login and info and login in
+	// Form fields
 	let nom = '';
 	let prenom = '';
 	let role = 'Étudiant'; // Default role
-	let name = '';
 	let email = '';
 	let password = '';
+	let password_confirm = '';
 	let errorMessage = '';
 	let posting = false;
 
-	const handleLogin = async () => {
-		window.location.href = '/success';
+	const handleSignup = async () => {
+		posting = true;
+		errorMessage = '';
+
+		// Basic validation
+		if (password !== password_confirm) {
+			errorMessage = 'Passwords do not match';
+			posting = false;
+			return;
+		}
+
+		try {
+			const response = await fetch('https://pedageval.pythonanywhere.com/api/signup/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					nom,
+					prenom,
+					role,
+					email,
+					password,
+					password_confirm
+				})
+			});
+
+			if (response.status === 201) {
+				// Success - redirect to success page
+				goto('/success');
+			} else {
+				// Handle other status codes
+				const errorData = await response.json();
+				errorMessage = errorData.message || 'Signup failed';
+			}
+		} catch (error) {
+			errorMessage = 'Network error or server unavailable';
+			console.error('Signup error:', error);
+		} finally {
+			posting = false;
+		}
 	};
 </script>
 
