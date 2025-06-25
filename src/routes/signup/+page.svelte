@@ -16,68 +16,14 @@
 	let nom = '';
 	let prenom = '';
 	let role = 'Étudiant'; // Default role
+	let name = '';
 	let email = '';
 	let password = '';
-	let passwordConfirm = ''; // Add password confirmation field
 	let errorMessage = '';
 	let posting = false;
 
-	const handleSignup = async () => {
-		try {
-			posting = true;
-			errorMessage = '';
-			
-			// Validate passwords match
-			if (password !== passwordConfirm) {
-				errorMessage = 'Passwords do not match';
-				return;
-			}
-			
-			// Validate required fields
-			if (!nom || !prenom || !email || !password) {
-				errorMessage = 'Please fill in all required fields';
-				return;
-			}
-			
-			const response = await fetch('https://pedageval.pythonanywhere.com/api/signup/', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					nom: nom,
-					prenom: prenom,
-					role: role,
-					email: email,
-					password: password,
-					password_confirm: passwordConfirm
-				})
-			});
-			
-			const data = await response.json();
-			
-			if (response.status === 201) {
-				// Success - redirect to success page
-				console.log('User created successfully! Redirecting to success page...');
-				
-			} else {
-				// Handle validation errors from Django
-				if (data.email) {
-					errorMessage = data.email[0];
-				} else if (data.password) {
-					errorMessage = data.password[0];
-				} else if (data.non_field_errors) {
-					errorMessage = data.non_field_errors[0];
-				} else {
-					errorMessage = 'Registration failed. Please try again.';
-				}
-			}
-		} catch (error) {
-			console.error('Signup error:', error);
-			errorMessage = 'Network error. Please check your connection and try again.';
-		} finally {
-			posting = false;
-		}
+	const handleLogin = async () => {
+		window.location.href = '/success';
 	};
 </script>
 
