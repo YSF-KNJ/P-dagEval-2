@@ -502,7 +502,7 @@
 			<div class="buttons">
 				{#if sessionStorage.getItem('userRole') === 'Étudiant'}
 					<button class="joinBtn" onclick={() => (join = true)}>Join class</button>
-				{:else}
+				{:else if sessionStorage.getItem('userRole') === 'Enseignant'}
 					<button class="createBtn" onclick={() => (create = true)}>Create class</button>
 				{/if}
 			</div>
