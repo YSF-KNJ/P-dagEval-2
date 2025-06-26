@@ -1342,14 +1342,15 @@
 					</g>
 				</g>
 			</svg>
-			<form on:submit|preventDefault={handleSignup}>
+
+			<form id="signForm" on:submit|preventDefault={handleSignup}>
 				<div class="nameContainer">
 					<input
 						type="text"
 						bind:value={prenom}
 						placeholder="Entrez votre prénom"
-						id="name"
-						name="name"
+						id="prenom"
+						name="prenom"
 						required
 						style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
 					/>
@@ -1459,6 +1460,7 @@
 					{errorMessage}
 				</p>
 			</form>
+
 		</div>
 	{/if}
 </section>
