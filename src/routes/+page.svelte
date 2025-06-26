@@ -1106,8 +1106,6 @@
 		</svg>
 	{/if}
 
-
-
 	<div class="footer-pinned">
 		<p>Réalisé par : Youssef Kanjaa</p>
 		<p>Encadré par : Prof. Abdelilah El Makrizi</p>
@@ -1120,10 +1118,11 @@
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		text-align: center;
-		font-size: 0.8rem;
+		background-color: white;
+		text-align: left;
+		font-size: 0.6rem;
 		color: #2525ad;
-		padding: 1rem 0;
+		padding: 0.6rem 0;
 		z-index: 100;
 		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 	}
