@@ -332,7 +332,7 @@
 								style="fill:#D5CBFB;stroke:#57929D;stroke-width:1.5115;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 								d="     M73.382,414.305l-26.99-90.77c-2.859-9.616,4.372-19.267,14.437-19.267h146.802c6.091,0,11.583,3.657,13.913,9.265l32.385,77.954     c4.136,9.957-3.291,20.884-14.105,20.742C188.622,411.56,69.479,410.416,73.382,414.305z"
 							/>
-							
+
 							<path
 								style="fill:#7B70EE;"
 								d="M331.489,427.475H73.383c-4.553,0-8.279-3.725-8.279-8.279v0c0-4.553,3.726-8.279,8.279-8.279     h258.106c4.553,0,8.279,3.725,8.279,8.279l0,0C339.768,423.749,336.042,427.475,331.489,427.475z"
@@ -437,7 +437,6 @@
 						<g>
 							<g>
 								<g>
-									
 									<polygon
 										style="fill:#2525AD;stroke:#2525AD;stroke-width:0.6146;stroke-miterlimit:10;"
 										points="270.607,251.317        420.561,251.317 420.019,147.965 270.066,147.965      "
@@ -501,8 +500,11 @@
 				</g>
 			</svg>
 			<div class="buttons">
-				<button class="createBtn" onclick={() => (create = true)}>Create class</button>
-				<button class="joinBtn" onclick={() => (join = true)}>Join class</button>
+				{#if sessionStorage.getItem('userRole') === 'Étudiant'}
+					<button class="joinBtn" onclick={() => (join = true)}>Join class</button>
+				{:else}
+					<button class="createBtn" onclick={() => (create = true)}>Create class</button>
+				{/if}
 			</div>
 		{/if}
 	{/if}
@@ -1682,8 +1684,7 @@
 
 		margin: 0 auto;
 		padding: 20px;
-			min-height: 70vh;
-	
+		min-height: 70vh;
 	}
 
 	.answerQuestionBlock {
