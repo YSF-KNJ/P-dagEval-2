@@ -15,7 +15,7 @@
 	<div class="success-card">
 		<h1>Registration Successful! 🎉</h1>
 		<div class="user-info">
-			<h2>Welcome, {userData.name}!</h2>
+			<h2>Welcome {userData.name}!</h2>
 			<p>Your account has been created successfully.</p>
 		</div>
 		<a href="/backoffice/home" class="continue-btn">Continue to Dashboard</a>

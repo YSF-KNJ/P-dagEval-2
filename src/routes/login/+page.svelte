@@ -18,9 +18,36 @@
 	let password = '';
 	let errorMessage = '';
 	let posting = false;
+	let loginEmail = '';
+	let loginPassword = '';
+	let loginError = '';
+	let loggingIn = false;
 
 	const handleLogin = async () => {
-		window.location.href = '/backoffice/home';
+		loggingIn = true;
+		loginError = '';
+		try {
+			const response = await fetch('https://pedageval.pythonanywhere.com/api/login/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					email: loginEmail,
+					password: loginPassword
+				})
+			});
+			if (response.status === 200) {
+				goto('/backoffice/home');
+			} else {
+				const errorData = await response.json();
+				loginError = errorData.message || 'Login failed';
+			}
+		} catch (error) {
+			loginError = error.message;
+		} finally {
+			loggingIn = false;
+		}
 	};
 </script>
 
@@ -1306,9 +1333,9 @@
 				<div class="nameContainer">
 					<input
 						type="email"
-						bind:value={email}
+						bind:value={loginEmail}
 						placeholder={$translations.login[0]}
-						id="name"
+						id="email"
 						name="email"
 						required
 						style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
@@ -1324,7 +1351,7 @@
 				</div>
 				<div class="passContainer">
 					<input
-						bind:value={password}
+						bind:value={loginPassword}
 						type="password"
 						id="password2"
 						name="password"
@@ -1348,13 +1375,11 @@
 							<div class="loader"></div>
 						</div>
 					{:else}
-						{$translations.login[2]}
+						Login
 					{/if}
 				</button>
 
-				<p class="error" style="opacity: {errorMessage ? '1' : '0'}">
-					{$translations.login[3]}
-				</p>
+				<p class="error" style="opacity: {loginError ? '1' : '0'}">{loginError}</p>
 			</form>
 		</div>
 	{/if}
