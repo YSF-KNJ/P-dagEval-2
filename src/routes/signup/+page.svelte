@@ -1469,15 +1469,15 @@
 
 				
 
-				<button type="submit" id="logToAcc">
-					{#if posting}
-						<div class="formLoading">
-							<div class="loader"></div>
-						</div>
-					{:else}
-						Sign In
-					{/if}
-				</button>
+					<button type="submit" id="logToAcc">
+						{#if posting}
+							<div class="formLoading">
+								<div class="loader"></div>
+							</div>
+						{:else}
+							Sign In
+						{/if}
+					</button>
 
 				<p class="error" style="opacity: {errorMessage ? '1' : '0'}">
 					{errorMessage}
