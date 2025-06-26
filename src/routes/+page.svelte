@@ -1105,6 +1105,11 @@
 			</g>
 		</svg>
 	{/if}
+
+	<div style="margin-top: 2rem; text-align: center; font-size: 1.1rem; color: #2525AD;">
+		<p>Réalisé par : Youssef Kanjaa</p>
+		<p>Encadré par : Prof. Abdelilah El Makrizi</p>
+	</div>
 </section>
 
 <style>
