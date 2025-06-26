@@ -20,7 +20,7 @@
 	let errorMessage = '';
 	let posting = false;
 
-	const handleLogin = () => {
+	const handleSignup = async () => {  // Changed to handleSignup and added async
 		posting = true;
 		errorMessage = '';
 
