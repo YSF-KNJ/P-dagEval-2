@@ -1106,26 +1106,14 @@
 		</svg>
 	{/if}
 
-	<div class="footer-pinned">
+	<br />
+	<div style="margin-top: 2rem; text-align: center; font-size: 1.1rem; color: #2525AD;">
 		<p>Réalisé par : Youssef Kanjaa</p>
 		<p>Encadré par : Prof. Abdelilah El Makrizi</p>
 	</div>
 </section>
 
 <style>
-	.footer-pinned {
-		position: fixed;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		background-color: white;
-		text-align: left;
-		font-size: 0.6rem;
-		color: #2525ad;
-		padding: 0.6rem 0;
-		z-index: 100;
-		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
-	}
 	section {
 		min-height: 80vh;
 		width: var(--width);
