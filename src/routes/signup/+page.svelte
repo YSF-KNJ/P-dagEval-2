@@ -57,7 +57,7 @@
 				errorMessage = errorData.message || 'Signup failed';
 			}
 		} catch (error) {
-			errorMessage = 'Network error or server unavailable';
+			errorMessage = error.message;
 			console.error('Signup error:', error);
 		} finally {
 			posting = false;
