@@ -1342,7 +1342,7 @@
 					</g>
 				</g>
 			</svg>
-			<form on:submit|preventDefault={handleSignup}></form>
+			<form on:submit|preventDefault={handleSignup}>
 				<div class="nameContainer">
 					<input
 						type="text"
