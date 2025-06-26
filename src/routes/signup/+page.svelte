@@ -20,7 +20,8 @@
 	let errorMessage = '';
 	let posting = false;
 
-	const handleSignup = async () => {  // Changed to handleSignup and added async
+	const handleSignup = async () => {
+		// Changed to handleSignup and added async
 		posting = true;
 		errorMessage = '';
 
@@ -50,8 +51,8 @@
 			if (response.status === 201) {
 				// Success - redirect to success page
 				goto('/success');
-
 			} else {
+				console.log(response.status);
 				// Handle other status codes
 				const errorData = await response.json();
 				errorMessage = errorData.message || 'Signup failed';
@@ -1445,45 +1446,42 @@
 							? 'position: absolute; top: 1.4rem; right: 1rem; color: var(--text-color);'
 							: 'position: absolute; top: 1.4rem; left: 1rem; color: var(--text-color)'}
 					/>
+				</div>
 
-					<div class="passContainer">
-						<input
-							bind:value={password_confirm}
-							placeholder="Confirmez le mot de passe"
-							type="password"
-							id="password_confirm"
-							name="password_confirm"
-							required
-							style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
-						/>
-						<Icon
-							icon="hugeicons:square-lock-password"
-							width="32"
-							height="32"
-							style={$language === 'ar'
-								? 'position: absolute; top: 1.4rem; right: 1rem; color: var(--text-color);'
-								: 'position: absolute; top: 1.4rem; left: 1rem; color: var(--text-color)'}
-						/>
-					</div>
+				<div class="passContainer">
+					<input
+						bind:value={password_confirm}
+						placeholder="Confirmez le mot de passe"
+						type="password"
+						id="password_confirm"
+						name="password_confirm"
+						required
+						style={$language === 'ar' ? 'padding: 0 3.2rem 0 1rem' : 'padding: 0 1rem 0 3.2rem'}
+					/>
+					<Icon
+						icon="hugeicons:square-lock-password"
+						width="32"
+						height="32"
+						style={$language === 'ar'
+							? 'position: absolute; top: 1.4rem; right: 1rem; color: var(--text-color);'
+							: 'position: absolute; top: 1.4rem; left: 1rem; color: var(--text-color)'}
+					/>
+				</div>
 
-
-				
-
-					<button type="submit" id="logToAcc">
-						{#if posting}
-							<div class="formLoading">
-								<div class="loader"></div>
-							</div>
-						{:else}
-							Sign In
-						{/if}
-					</button>
+				<button type="submit" id="logToAcc">
+					{#if posting}
+						<div class="formLoading">
+							<div class="loader"></div>
+						</div>
+					{:else}
+						Sign In
+					{/if}
+				</button>
 
 				<p class="error" style="opacity: {errorMessage ? '1' : '0'}">
 					{errorMessage}
 				</p>
 			</form>
-
 		</div>
 	{/if}
 </section>
