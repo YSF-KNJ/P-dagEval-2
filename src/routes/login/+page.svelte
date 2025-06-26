@@ -38,6 +38,9 @@
 				})
 			});
 			if (response.status === 200) {
+				const userData = await response.json();
+				sessionStorage.setItem('userRole', userData.role);
+				console.log(userData.role);
 				goto('/backoffice/home');
 			} else {
 				const errorData = await response.json();
