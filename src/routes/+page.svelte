@@ -1106,10 +1106,7 @@
 		</svg>
 	{/if}
 
-	<div style="margin-top: 2rem; text-align: center; font-size: 1.1rem; color: #2525AD;">
-		<p>Réalisé par : Youssef Kanjaa</p>
-		<p>Encadré par : Prof. Abdelilah El Makrizi</p>
-	</div>
+
 
 	<div class="footer-pinned">
 		<p>Réalisé par : Youssef Kanjaa</p>
@@ -1123,9 +1120,8 @@
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		background: #fff; /* or your page background */
 		text-align: center;
-		font-size: 1.1rem;
+		font-size: 0.8rem;
 		color: #2525ad;
 		padding: 1rem 0;
 		z-index: 100;
