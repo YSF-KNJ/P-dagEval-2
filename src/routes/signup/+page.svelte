@@ -52,9 +52,8 @@
 				// Success - redirect to success page
 				goto('/success');
 			} else {
-				console.log(response.status);
-				// Handle other status codes
 				const errorData = await response.json();
+				console.log(errorData); // Add this line
 				errorMessage = errorData.message || 'Signup failed';
 			}
 		} catch (error) {
