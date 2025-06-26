@@ -21,8 +21,8 @@
 				{$translations.landing.home[2]}
 			</p>
 			<div class="buttons">
-				<a href="/backoffice/home" class="startBtn">{$translations.landing.home[4]}</a>
-				<a href="/menu" target="_blank" class="videoBtn">
+				<a href="/signup" class="startBtn">{$translations.landing.home[4]}</a>
+				<a href="#" target="_blank" class="videoBtn">
 					<Icon icon="hugeicons:ai-video" width="33" height="33" />
 					<p>{$translations.landing.home[5]}</p>
 				</a>
