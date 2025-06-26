@@ -51,9 +51,18 @@
 			if (response.status === 201) {
 				// Success - redirect to success page
 				goto('/success');
+			} else if (errorData.email || errorData.password) {
+				// Collect all error messages into a single string
+				let messages = [];
+				if (errorData.email) {
+					messages = messages.concat(errorData.email);
+				}
+				if (errorData.password) {
+					messages = messages.concat(errorData.password);
+				}
+				errorMessage = messages.join(' ');
 			} else {
 				const errorData = await response.json();
-				console.log(errorData); // Add this line
 				errorMessage = errorData.message || 'Signup failed';
 			}
 		} catch (error) {
