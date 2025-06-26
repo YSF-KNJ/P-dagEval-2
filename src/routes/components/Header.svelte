@@ -94,7 +94,7 @@
 			<a href="/login">
 				<Icon icon="hugeicons:circle-arrow-up-right" width="33" height="33" />
 			</a>
-			<a href="https://wa.me/212641721009" target="_blank">
+			<a href="https://wa.me/212762978095" target="_blank">
 				<Icon icon="hugeicons:whatsapp" width="30" height="30" />
 			</a>
 		</div>
