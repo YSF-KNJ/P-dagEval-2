@@ -18,7 +18,7 @@
 			<h2>Welcome {userData.name}!</h2>
 			<p>Your account has been created successfully.</p>
 		</div>
-		<a href="/backoffice/home" class="continue-btn">Continue to Dashboard</a>
+		<a href="/login" class="continue-btn">Continue to Login</a>
 	</div>
 </section>
 

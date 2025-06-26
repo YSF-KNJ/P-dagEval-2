@@ -41,6 +41,7 @@
 				const userData = await response.json();
 				sessionStorage.setItem('userRole', userData.user.role);
 				console.log(userData.user.role);
+				goto('/backoffice/home');
 			} else {
 				const errorData = await response.json();
 				loginError = errorData.message || 'Login failed';
