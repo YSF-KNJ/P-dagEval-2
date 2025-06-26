@@ -20,7 +20,7 @@
 	let errorMessage = '';
 	let posting = false;
 
-	const handleSignup = async () => {
+	const handleLogin = () => {
 		posting = true;
 		errorMessage = '';
 
@@ -1342,7 +1342,7 @@
 					</g>
 				</g>
 			</svg>
-			<form id="signForm" on:submit|preventDefault={handleLogin}>
+			<form on:submit|preventDefault={handleSignup}></form>
 				<div class="nameContainer">
 					<input
 						type="text"
