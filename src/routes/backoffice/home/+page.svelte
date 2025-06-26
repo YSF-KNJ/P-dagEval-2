@@ -20,6 +20,8 @@
 	let description = '';
 	let questionCount = 1;
 
+	console.log('Role:', sessionStorage.getItem('userRole'));
+
 	const answerTypes = ['radio', 'checkbox', 'text'];
 
 	let questions = [
