@@ -26,6 +26,11 @@
 					<Icon icon="hugeicons:ai-video" width="33" height="33" />
 					<p>{$translations.landing.home[5]}</p>
 				</a>
+
+				<div style="margin-top: 2rem; text-align: center; font-size: 1.1rem; color: #2525AD;">
+					<p>Réalisé par : Youssef Kanjaa</p>
+					<p>Encadré par : Prof. Abdelilah El Makrizi</p>
+				</div>
 			</div>
 		</div>
 
@@ -1105,12 +1110,6 @@
 			</g>
 		</svg>
 	{/if}
-
-	<br />
-	<div style="margin-top: 2rem; text-align: center; font-size: 1.1rem; color: #2525AD;">
-		<p>Réalisé par : Youssef Kanjaa</p>
-		<p>Encadré par : Prof. Abdelilah El Makrizi</p>
-	</div>
 </section>
 
 <style>
